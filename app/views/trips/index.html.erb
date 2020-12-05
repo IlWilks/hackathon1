@@ -1,5 +1,4 @@
 <h1>Welcome <%=current_user.first_name%>!</h1>
-<p><%=link_to "LogOut", destroy_user_session_path, :method => :delete , :class => "waves-effect waves-light btn"%></p>
 
 <%= link_to "Start a new Trip!", new_trip_path , :class => "waves-effect waves-light btn"%>
 <p>Below are all of your trips</p>
