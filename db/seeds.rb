@@ -5,13 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
+trips = []
+locations = []
 
-u = User.create(email:"test@test.com",password:123456, first_name: "George", last_name: "Kastanza")
-t = u.trips.create(title: "Andrew Family Vacation", date: "2020-12-05 17:40:31", description: "A really fun getaway")
-l = t.locations.create(name: "California", attraction: "Disneyland")
-Address.create(street: "disneyland way 123", city: "anaheim", state: "CA", zipcode: 78564,location_id:l.id)
+
+u = User.create(email: "test@test.com", password: 123456, first_name: "Joe", last_name: "Smith")
+
+3.times do
+  trips << Trip.create(title: Faker::Ancient.god, date: Faker::Date.between(from: "2021-01-01", to: "2020-12-30"), description: Faker::Quote.famous_last_words, user_id: u.id)
+end
+
+10.times do |i|
+  locations << Location.create(name: Faker::Movies::LordOfTheRings.location, attraction: Faker::Mountain.range, trip_id: trips.sample.id)
+  Address.create(street: Faker::Address.street_name, city: Faker::Address.city_suffix, state: Faker::Address.state, zipcode: Faker::Address.zip_code, location_id: locations[i].id)
+end
+
+puts "seeded"
 
 # 3.times do Trip.create(
 #     title:

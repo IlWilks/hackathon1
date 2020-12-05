@@ -1,14 +1,15 @@
 <h1>Location</h1>
+<%=link_to "Back to Trip Locations", trip_path(@trip)%>
 <h3><%=@location.name%></h3>
 
-<p><%= link_to "Edit", edit_trip_location_path(@trip, @location) %></p>
-<p><%= link_to "Delete", trip_location_path(@trip, @location), method: :delete %></p>
+<p><%= link_to "Edit", edit_trip_location_path(@trip, @location), :class => "waves-effect waves-light btn" %>
+<%= link_to "Delete", trip_location_path(@trip, @location), method: :delete, :class => "waves-effect waves-light btn" %></p>
 
 <h3>Address</h3>
-<%=@address.street%>
-<%=@address.city%>
-<%=@address.state%>
-<%=@address.zipcode%>
+<p>Address: <%=@address.street%></p>
+<p>City: <%=@address.city%></p>
+<p>State: <%=@address.state%></p>
+<p>Zip: <%=@address.zipcode%></p>
 
-<p><%= link_to "New/Edit", edit_location_address_path(@location, @address) %></p>
-<p><%= link_to "Delete", location_address_path(@location, @address), method: :delete %></p>
+<p><%= link_to "New/Edit", edit_location_address_path(@location, @address), :class => "waves-effect waves-light btn" %>
+<%= link_to "Delete", location_address_path(@location, @address), method: :delete, :class => "waves-effect waves-light btn" %></p>

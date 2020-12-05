@@ -1,10 +1,12 @@
 <h1><%=@trip.title%></h1>
+<h4><%=@trip.date%></h4>
+<%=link_to "Back to Trips", trips_path%>
 
-<p><%= link_to "Edit", edit_trip_path(@trip) %></p>
-<p><%= link_to "Delete", trip_path(@trip), method: :delete %></p>
+<p><%= link_to "Edit", edit_trip_path(@trip), :class => "waves-effect waves-light btn"%>
+<%= link_to "Delete", trip_path(@trip), method: :delete, :class => "waves-effect waves-light btn" %></p>
 
 <h3>Here is a list of all the locations in your trip!</h3>
-<p><%= link_to "New", new_trip_location_path(@trip) %></p>
+<p><%= link_to "New", new_trip_location_path(@trip), :class => "waves-effect waves-light btn" %></p>
 <%@locations.each do |location|%>
 <p>
 <%=link_to location.name, trip_location_path(@trip,location)%>

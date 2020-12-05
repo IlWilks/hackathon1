@@ -1,9 +1,11 @@
 <h1>Welcome to R.A.I.L. Trips</h1>
 <p>Your one stop shop to Trip organization!</p>
 
-<%= link_to "Login", new_user_session_path%>
-<p><%=link_to "LogOut", destroy_user_session_path, :method => :delete %></p>
 
-<p><%= link_to "Sign Up", new_user_registration_path%></p>
+<%= link_to "Login", new_user_session_path, :class => "waves-effect waves-light btn"%>
 
-<p><%= link_to "View Trips Home", trips_path%></p>
+<p><%=link_to "LogOut", destroy_user_session_path, :method => :delete , :class => "waves-effect waves-light btn"%></p>
+
+<p><%= link_to "Sign Up", new_user_registration_path, :class => "waves-effect waves-light btn"%></p>
+
+<p><%= link_to "View Trips Home", trips_path, :class => "waves-effect waves-light btn"%></p>
