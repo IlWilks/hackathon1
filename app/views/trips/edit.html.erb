@@ -1,2 +1,15 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+<h1>Editing <%=@trip.title%></h1>
+
+<%=form_for @trip do |f|%>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date, "data-provide" => 'datepicker'%>
+  
+  <%= f.submit %>
+  <% end %>
+
