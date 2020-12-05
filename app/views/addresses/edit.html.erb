@@ -1,6 +1,6 @@
 <h1>Editing <%=@location.name%> Address</h1>
 
-<%=form_for @address do |f|%>
+<%=form_for [@location, @address] do |f|%>
   <%= f.label :street %>
   <%= f.text_field :street%>
 

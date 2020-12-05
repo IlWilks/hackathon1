@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static#home'
+  root 'trips#index'
   devise_for :users
 
   resources :trips do

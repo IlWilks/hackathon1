@@ -1,8 +1,8 @@
 <h1>Location</h1>
-<h3><%=@location%></h3>
+<h3><%=@location.name%></h3>
 
-<p><%= link_to "Edit", edit_trip_location_path(@trip,@location) %></p>
-<p><%= link_to "Delete", trip_location_path(@trip, @location), method: :destroy %></p>
+<p><%= link_to "Edit", edit_trip_location_path(@trip, @location) %></p>
+<p><%= link_to "Delete", trip_location_path(@trip, @location), method: :delete %></p>
 
 <h3>Address</h3>
 <%=@address.street%>
@@ -10,5 +10,5 @@
 <%=@address.state%>
 <%=@address.zipcode%>
 
-<p><%= link_to "Edit", edit_location_address_path(@location, @address) %></p>
-<p><%= link_to "Delete", location_address_path(@location, @address), method: :destroy %></p>
+<p><%= link_to "New/Edit", edit_location_address_path(@location, @address) %></p>
+<p><%= link_to "Delete", location_address_path(@location, @address), method: :delete %></p>
