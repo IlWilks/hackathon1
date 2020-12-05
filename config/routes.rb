@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root 'trips#index'
+  root 'static#home'
   devise_for :users
+    
+  # get '/users/sign_out' to: 'devise/sessions#destroy'
+  
 
   resources :trips do
     resources :locations

@@ -1,4 +1,6 @@
-<h1>Welcome! <%=current_user.email%></h1>
+<h1>Welcome <%=current_user.first_name%>!</h1>
+<p><%=link_to "LogOut", destroy_user_session_path, :method => :delete %></p>
+
 <%= link_to "Start a new Trip!", new_trip_path %>
 <p>Below are all of your trips</p>
 <% @trips.each do |trip|%>

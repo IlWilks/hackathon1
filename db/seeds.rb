@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-u = User.create(email:"test@test.com",password:123456)
+u = User.create(email:"test@test.com",password:123456, first_name: "George", last_name: "Kastanza")
 t = u.trips.create(title: "Andrew Family Vacation", date: "2020-12-05 17:40:31", description: "A really fun getaway")
 l = t.locations.create(name: "California", attraction: "Disneyland")
 Address.create(street: "disneyland way 123", city: "anaheim", state: "CA", zipcode: 78564,location_id:l.id)
